@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctonect - Smart Clinic Management</title>
+    <style>
+        body { 
+            margin: 0; padding: 0; background-color: #0a0a0a; color: #ffffff; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            text-align: center; display: flex; flex-direction: column; 
+            justify-content: center; min-height: 100vh; 
+        }
+        .container { padding: 20px; max-width: 800px; margin: auto; }
+        h4 { color: #888888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 5px;}
+        h1 { font-size: 4rem; margin-top: 0; margin-bottom: 20px; }
+        p { font-size: 1.2rem; color: #cccccc; margin-bottom: 40px; line-height: 1.6; }
+        .form-group { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        input[type="email"] { 
+            padding: 15px 20px; width: 300px; border: 1px solid #333; 
+            background: #1a1a1a;  color: white; border-radius: 5px; font-size: 1rem; outline: none;
+        }
+        input[type="email"]:focus { border-color: #666; }
+        button { 
+            padding: 15px 30px; background-color: #ffffff; color: #000000; 
+            border: none; border-radius: 5px; font-size: 1rem; font-weight: bold; 
+            cursor: pointer; transition: 0.2s ease;
+        }
+        button:hover { background-color: #cccccc; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Smart Clinic Management is</h4>
+        <h1>Launching Soon</h1>
+        <p>Doctonect is a smart, zero-cost queue management app designed exclusively for doctors. Streamline appointments, eliminate waiting room chaos, and save time.</p>
+        
+        <form class="form-group" onsubmit="event.preventDefault(); alert('Email recorded! We will contact you soon.');">
+            <input type="email" placeholder="Enter your email for early access" required>
+            <button type="submit">Join Waitlist</button>
+        </form>
+    </div>
+</body>
+</html>
