@@ -1,78 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctonect - Smart Clinic Management</title>
     <style>
         :root {
-            --primary-teal: #16777e; /* Curo background color */
-            --dark-teal: #0e5b61; /* Curo button color */
-            --light-teal: #85C7C3; /* Curo logo accent color */
+            --primary-teal: #16777e;
+            /* Curo background color */
+            --dark-teal: #0e5b61;
+            /* Curo button color */
+            --light-teal: #85C7C3;
+            /* Curo logo accent color */
             --bg-white: #ffffff;
             --text-dark: #2c3e50;
             --text-light: #ffffff;
             --input-bg: #f8fafc;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            background-color: var(--bg-white); 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-white);
             color: var(--text-dark);
             scroll-behavior: smooth;
         }
 
         /* Navigation Bar */
         nav {
-            position: fixed; top: 0; width: 100%;
+            position: fixed;
+            top: 0;
+            width: 100%;
             background: var(--primary-teal);
             padding: 20px 5%;
-            display: flex; justify-content: space-between; align-items: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--text-light); }
-        .logo span { font-weight: 300; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 1rem; transition: 0.3s; }
-        .nav-links a:hover { opacity: 0.8; }
-        .nav-btn { 
-            padding: 8px 20px; background: var(--text-light); color: var(--primary-teal); 
-            border-radius: 50px; font-weight: bold; text-decoration: none; font-size: 0.9rem;
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+
+        .logo span {
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .nav-btn {
+            padding: 8px 20px;
+            background: var(--text-light);
+            color: var(--primary-teal);
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 0.9rem;
         }
 
         /* Hero Section with Teal Gradient & Wave */
-        #home { 
+        #home {
             background: linear-gradient(180deg, var(--primary-teal) 0%, #1a8b94 100%);
             color: var(--text-light);
-            padding: 140px 5% 40px; 
+            padding: 140px 5% 40px;
             text-align: center;
             position: relative;
         }
-        
-        .badge { 
-            background: rgba(255,255,255,0.2); color: var(--text-light); 
-            padding: 8px 16px; border-radius: 50px; font-size: 0.8rem; 
-            font-weight: bold; margin-bottom: 20px; display: inline-block;
+
+        .badge {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--text-light);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
         }
-        h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; }
-        p.subtitle-light { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
-        
-        .form-group { display: flex; gap: 10px; max-width: 500px; margin: 0 auto; width: 100%; position: relative; z-index: 10; }
-        input[type="email"] { 
-            flex: 1; padding: 15px 20px; border: none; 
-            background: var(--text-light); color: var(--text-dark); 
-            border-radius: 8px; outline: none; font-size: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
         }
-        button { 
-            padding: 15px 30px; background: var(--dark-teal); color: var(--text-light); 
-            border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        p.subtitle-light {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
         }
-        button:hover { background: #0a464a; }
+
+        .form-group {
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        input[type="email"] {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            background: var(--text-light);
+            color: var(--text-dark);
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 15px 30px;
+            background: var(--dark-teal);
+            color: var(--text-light);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: #0a464a;
+        }
 
         /* The Wave SVG Divider */
         .wave-container {
@@ -83,47 +164,119 @@
             overflow: hidden;
             line-height: 0;
         }
+
         .wave-container svg {
-            position: relative; display: block; width: calc(100% + 1.3px); height: 80px;
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
         }
-        .wave-container .shape-fill { fill: var(--bg-white); }
+
+        .wave-container .shape-fill {
+            fill: var(--bg-white);
+        }
 
         /* General Section Styling */
-        .section { padding: 80px 5%; text-align: center; }
-        .section-title { font-size: 2.5rem; color: var(--primary-teal); margin-bottom: 15px; }
-        p.subtitle-dark { font-size: 1.1rem; color: #64748b; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+        .section {
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary-teal);
+            margin-bottom: 15px;
+        }
+
+        p.subtitle-dark {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
 
         /* Video Section (The Problem) */
-        #the-problem { background-color: var(--bg-white); padding-top: 40px; }
+        #the-problem {
+            background-color: var(--bg-white);
+            padding-top: 40px;
+        }
+
         .video-container {
-            max-width: 900px; margin: 0 auto; width: 100%;
-            border-radius: 20px; overflow: hidden; 
-            box-shadow: 0 20px 40px rgba(22, 119, 126, 0.15); /* Teal shadow */
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(22, 119, 126, 0.15);
+            /* Teal shadow */
             border: 4px solid var(--input-bg);
         }
-        video { width: 100%; display: block; background: #000; }
+
+        video {
+            width: 100%;
+            display: block;
+            background: #000;
+        }
 
         /* Features Section */
-        #features { background-color: var(--input-bg); }
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
-        .feature-card { 
-            background: var(--bg-white); padding: 40px; border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; 
+        #features {
+            background-color: var(--input-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--bg-white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
             border-top: 4px solid var(--primary-teal);
         }
-        .feature-card h3 { font-size: 1.3rem; margin-bottom: 15px; color: var(--text-dark); }
-        .feature-card p { color: #64748b; line-height: 1.6; }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.6;
+        }
 
         /* Footer */
-        footer { background: var(--primary-teal); padding: 40px 5%; text-align: center; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
-        
+        footer {
+            background: var(--primary-teal);
+            padding: 40px 5%;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .nav-links { display: none; }
-            .form-group { flex-direction: column; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .form-group {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -141,17 +294,22 @@
     <section id="home">
         <div class="badge">Launching Soon</div>
         <h1>Smart Queue Management<br>for Clinics</h1>
-        <p class="subtitle-light">Eliminate waiting room chaos and save time with our intelligent live-tracking system. Care when you need it.</p>
-        
-        <form class="form-group" onsubmit="event.preventDefault(); alert('Thanks! We will notify you once we launch.');">
+        <p class="subtitle-light">Eliminate waiting room chaos and save time with our intelligent live-tracking system.
+            Care when you need it.</p>
+
+        <form class="form-group"
+            onsubmit="event.preventDefault(); alert('Thanks! We will notify you once we launch.');">
             <input type="email" placeholder="Doctor's Email Address" required>
             <button type="submit">Join Waitlist</button>
         </form>
 
         <!-- Wave SVG to match login screen -->
         <div class="wave-container">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.2,192.7,101.5,236.4,89.12,279.16,71.7,321.39,56.44Z" class="shape-fill"></path>
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,119.2,192.7,101.5,236.4,89.12,279.16,71.7,321.39,56.44Z"
+                    class="shape-fill"></path>
             </svg>
         </div>
     </section>
@@ -159,14 +317,12 @@
     <!-- Page 2: The Video / Pain Point -->
     <section id="the-problem" class="section">
         <h2 class="section-title">The Waiting Room Chaos</h2>
-        <p class="subtitle-dark">Watch how Doctonect solves the biggest pain point for doctors and patients. Smart tracking, zero stress.</p>
-        
+        <p class="subtitle-dark">Watch the real struggle patients face in crowded waiting rooms. We built Doctonect to solve this exact problem. Smart tracking, zero stress.</p>
+
         <div class="video-container">
-            <!-- Ensure your video file is named pain-point-video.mp4 and in the same folder -->
-            <video controls poster="https://via.placeholder.com/900x500/16777e/ffffff?text=Play+Video">
-                <source src="pain-point-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <iframe width="100%" height="500" src="https://www.youtube.com/embed/OU_E9J3xvWg" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
         </div>
     </section>
 
@@ -174,15 +330,17 @@
     <section id="features" class="section">
         <h2 class="section-title">Everything You Need</h2>
         <p class="subtitle-dark">Designed for efficiency. Built for privacy.</p>
-        
+
         <div class="features-grid">
             <div class="feature-card">
                 <h3>Live Queue Tracking</h3>
-                <p>Patients can track their exact turn from their phone, reducing crowding in your clinic's waiting area.</p>
+                <p>Patients can track their exact turn from their phone, reducing crowding in your clinic's waiting
+                    area.</p>
             </div>
             <div class="feature-card">
                 <h3>Smart Polling System</h3>
-                <p>Our battery-saving backend ensures real-time updates without crashing the server or draining devices.</p>
+                <p>Our battery-saving backend ensures real-time updates without crashing the server or draining devices.
+                </p>
             </div>
             <div class="feature-card">
                 <h3>100% Free Forever</h3>
@@ -197,4 +355,5 @@
     </footer>
 
 </body>
+
 </html>
