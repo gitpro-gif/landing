@@ -38,7 +38,7 @@
             top: 0;
             width: 100%;
             background: var(--primary-teal);
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -46,19 +46,27 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Logo Styling */
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-light);
+            display: flex;
+            align-items: center;
         }
 
-        .logo span {
-            font-weight: 300;
+        .nav-logo {
+            height: 50px;
+            width: auto;
+            transition: 0.3s;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
         }
 
         .nav-links {
             display: flex;
             gap: 30px;
+            align-items: center;
         }
 
         .nav-links a {
@@ -281,13 +289,48 @@
 
     <!-- Navigation -->
     <nav>
-        <div class="logo">Docto<span>nect</span></div>
+        <!-- Your Custom SVG Logo -->
+        <a href="#home" class="logo">
+            <svg class="nav-logo" viewBox="0 0 447 579" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Yahan aapka lamba sa SVG path waisa hi rahega -->
+                <path
+                    d="M136.532 353.35V97.5405C136.532 82.5749 142.966 68.3317 154.196 58.439C192.33 24.8449 249.298 24.1898 288.195 56.8981L289.58 58.0628C301.595 68.1667 308.532 83.0635 308.532 98.7625V351.966C308.532 369.579 300.105 386.129 285.86 396.489L284.385 397.562C246.49 425.122 195.001 424.548 157.73 396.151C144.373 385.974 136.532 370.143 136.532 353.35Z"
+                    fill="#6EC8BD" />
+                <path
+                    d="M91.1829 136.002L346.993 136.002C361.958 136.002 376.201 142.436 386.094 153.666C419.688 191.8 420.343 248.768 387.635 287.665L386.47 289.05C376.366 301.065 361.47 308.002 345.771 308.002L92.5669 308.002C74.9538 308.002 58.404 299.574 48.0445 285.33L46.9712 283.854C19.4116 245.96 19.9853 194.471 48.3822 157.2C58.5596 143.842 74.3898 136.002 91.1829 136.002Z"
+                    fill="#6EC8BD" />
+                <path
+                    d="M158.215 221.279L226.367 289.94L287.815 218.574C297.164 207.717 296.928 191.586 287.265 181.007C273.697 166.151 249.955 167.325 237.917 183.446L224.965 200.793L206.035 180.584C192.566 166.204 169.592 166.71 156.769 181.669C146.856 193.232 147.485 210.469 158.215 221.279Z"
+                    fill="white" />
+                <path
+                    d="M164.533 229.505L184.648 229.504C186.136 229.504 187.399 228.414 187.616 226.943L191.487 200.731C191.984 197.364 196.816 197.295 197.409 200.647L206.254 250.676C206.861 254.111 211.853 253.918 212.194 250.447L214.672 225.211C214.821 223.693 216.085 222.528 217.61 222.504L230.712 222.298C232.185 222.275 233.423 221.186 233.634 219.729L235.878 204.239C236.38 200.768 241.411 200.832 241.826 204.314L246.749 245.696C247.162 249.166 252.168 249.248 252.694 245.793L255.963 224.331C256.179 222.915 257.365 221.849 258.795 221.785L287.533 220.5"
+                    stroke-width="4" stroke-linecap="round" stroke="#2C817F" />
+                <path
+                    d="M293.037 258C305.496 267.183 308.019 299.124 308.152 313.749C309.244 307.327 320.162 313.731 320.034 308.5C319.476 285.756 299.343 261.366 293.037 258Z"
+                    fill="#2C817F" />
+                <path
+                    d="M188.837 301.857C177.774 312.68 145.533 307.5 131.033 308C137.197 310.108 132.349 319.287 137.533 320C160.071 323.1 184.502 307.541 188.837 301.857Z"
+                    fill="#2C817F" />
+                <path
+                    d="M150.306 185.931C138.021 176.517 136.341 144.911 136.481 130.287C135.27 136.687 125.003 131.768 125.034 137C125.167 159.75 144.064 182.448 150.306 185.931Z"
+                    fill="#2C817F" />
+                <path
+                    d="M257.533 148.535C267.225 136.468 298.861 135.51 313.478 135.984C307.107 134.627 313.265 124.089 308.033 124C285.285 123.613 261.158 142.374 257.533 148.535Z"
+                    fill="#2C817F" />
+                <!-- Neeche wala kala lamba text code maine chhota kar diya taki padhne mein aasan rahe, aap apna pura paste kar dena -->
+                <path d="..." fill="black" />
+                <path d="..." fill="black" />
+            </svg>
+        </a>
+
         <div class="nav-links">
             <a href="#home">Home</a>
             <a href="#the-problem">The Problem</a>
             <a href="#features">Features</a>
         </div>
-        <a href="#home" class="nav-btn">Get App</a>
+
+        <!-- Button ko nav-links se bahar nikal diya! Aur yahan bhi Google Form link lag gaya -->
+        <a href="YOUR_GOOGLE_FORM_LINK_HERE" target="_blank" class="nav-btn">Get App</a>
     </nav>
 
     <!-- Page 1: Hero -->
@@ -297,11 +340,11 @@
         <p class="subtitle-light">Eliminate waiting room chaos and save time with our intelligent live-tracking system.
             Care when you need it.</p>
 
-        <form class="form-group"
-            onsubmit="event.preventDefault(); alert('Thanks! We will notify you once we launch.');">
-            <input type="email" placeholder="Doctor's Email Address" required>
-            <button type="submit">Join Waitlist</button>
-        </form>
+        <div class="form-group" style="justify-content: center;">
+            <a href="https://forms.gle/4s4gZWmcniD6y1EMA" target="_blank" style="text-decoration: none;">
+                <button type="button" style="padding: 15px 40px; font-size: 1.1rem;">Join the Waitlist</button>
+            </a>
+        </div>
 
         <!-- Wave SVG to match login screen -->
         <div class="wave-container">
@@ -317,10 +360,12 @@
     <!-- Page 2: The Video / Pain Point -->
     <section id="the-problem" class="section">
         <h2 class="section-title">The Waiting Room Chaos</h2>
-        <p class="subtitle-dark">Watch the real struggle patients face in crowded waiting rooms. We built Doctonect to solve this exact problem. Smart tracking, zero stress.</p>
+        <!-- Updated Video Description text -->
+        <p class="subtitle-dark">Watch the real struggle patients face in crowded waiting rooms. We built Doctonect to
+            solve this exact problem. Smart tracking, zero stress.</p>
 
         <div class="video-container">
-            <iframe width="100%" height="500" src="https://www.youtube.com/embed/OU_E9J3xvWg" frameborder="0"
+            <iframe width="100%" height="500" src="https://www.youtube.com/embed/PD5cjqarc5c" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
@@ -344,7 +389,8 @@
             </div>
             <div class="feature-card">
                 <h3>100% Free Forever</h3>
-                <p>No monthly subscriptions, no hidden charges. Just a pure bridge connecting Patients with doctors.</p>
+                <p>No monthly subscriptions, no hidden charges. Just a pure bridge connecting doctors with their
+                    patients.</p>
             </div>
         </div>
     </section>
